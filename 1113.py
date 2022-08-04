@@ -1,4 +1,3 @@
-#1113
 while True:
     X,Y=[int(i) for i in input().split()]
     if X>Y:
