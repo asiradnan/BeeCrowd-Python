@@ -1,4 +1,4 @@
-A,B,C,D=[int(i for i in input().split())]
+A,B,C,D=[int(i) for i in input().split()]
 if A==C:
     if B==D:
         print('O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)')
