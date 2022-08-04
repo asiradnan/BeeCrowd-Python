@@ -1,4 +1,3 @@
-#1021
 x=float(input())
 print('NOTAS:')
 y=x//100
