@@ -5,54 +5,86 @@ while True:
         for i in range(int(a[0])):
             b=input().split()
             main.append([int(j) for j in b])
-        for j in range(len(main)):
-            SUM=0
-            if j==0:
-                for k in range(len(main[j])):
-                    if k==0:
-                        if main[j][k+1]==1:
-                            SUM+=1
-                        if main[j+1][k]==1:
-                            SUM+=1
-                    elif k!=int(a[1]):
-                        if main[j][k+1]==1:
-                            SUM+=1
-                        if main[j][k-1]==1:
-                            SUM+=1
-                        if main[j+1][k]==1:
-                            SUM+=1
-                    else:
-                        if main[j][k-1]==1:
-                            SUM+=1
-                        if main[j+1][k]==1:
-                            SUM+=1
-                
-            elif j!=int(a[0]):
-                for k in range(len(main[j])):
-                    if k==0:
-                        if main[j][k+1]==1:
-                            SUM+=1
-                        if main[j+1][k]==1:
-                            SUM+=1
-                        if main[j-1][k]==1:
-                            SUM+=1
-                    elif k!=int(a[1]):
-                        if main[j][k+1]==1:
-                            SUM+=1
-                        if main[j][k-1]==1:
-                            SUM+=1
-                        if main[j+1][k]==1:
-                            SUM+=1
-                        if main[j-1][k]==1:
-                            SUM+=1
-                    else:
-                        if main[j][k+1]==1:
-                            SUM+=1
-                        if main[j][k-1]==1:
-                            SUM+=1
-                        if main[j-1][k]==1:
-                            SUM+=1
-            main[j][k]=SUM
-        print(main)
+        for row in range(len(main)):
+            empty=''
+            for col in range(len(main[row])):
+                count=0
+                if main[row][col]==0:
+                    if len(main)-1==0:
+                        if col==0:
+                            if main[row][col+1]==1:
+                                count+=1
+                        elif col!=0 and col!=(len(main[row])-1):
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row][col-1]==1:
+                                count+=1
+                        else:
+                            if main[row][col-1]==1:
+                                count+=1
+                    elif row==0:
+                        if col==0:
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                        elif col!=0 and col!=(len(main[row])-1):
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                            if main[row][col-1]==1:
+                                count+=1
+                        else:
+                            if main[row][col-1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                    elif row!=0 and row!=(len(main)-1):
+                        if col==0:
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                        elif col!=0 and col!=(len(main[row])-1):
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                            if main[row][col-1]==1:
+                                count+=1
+                        else:
+                            if main[row][col-1]==1:
+                                count+=1
+                            if main[row+1][col]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                    elif row==(len(main)-1):
+                        if col==0:
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                        elif col!=0 and col!=(len(main[row])-1):
+                            if main[row][col+1]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                            if main[row][col-1]==1:
+                                count+=1
+                        else:
+                            if main[row][col-1]==1:
+                                count+=1
+                            if main[row-1][col]==1:
+                                count+=1
+                else:
+                    count='9'
+                empty+=str(count)
+            print(empty)
     except:
         break
