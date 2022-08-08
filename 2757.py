@@ -1,0 +1,7 @@
+a=int(input())
+b=int(input())
+c=int(input())
+print('A = ',a,', B = ',b,', C = ',c,sep='')
+print('A = {0:10d}, B = {1:10d}, C = {2:10d}'.format(a,b,c))
+print('A = {0:010d}, B = {1:010d}, C = {2:010d}'.format(a,b,c))
+print('A = {0:<10d}, B = {1:<10d}, C = {2:<10d}'.format(a,b,c))
